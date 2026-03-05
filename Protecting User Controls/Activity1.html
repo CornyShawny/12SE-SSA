@@ -1,0 +1,54 @@
+<!--
+ACTIVITY: Cross-Site Scripting (XSS)
+
+WHAT THIS ACTIVITY IS ABOUT:
+This activity shows how a website can accidentally run code that a user types in.
+
+Normally, user input should be treated as plain text.
+If the browser treats it as HTML, it may execute scripts.
+
+This is called Cross-Site Scripting (XSS).
+
+WHAT YOU WILL DO:
+You will see how unsafe code works,
+then make one small change to stop the attack.
+-->
+
+<input id="nameInput" placeholder="Enter your name">
+<button onclick="showName()">Submit</button>
+
+<div id="output"></div>
+
+<script>
+function showName() {
+
+    // STEP 1:
+    // Get the text that the user typed into the input box.
+    // IMPORTANT: The browser does NOT know if this text is safe.
+    const name = document.getElementById("nameInput").value;
+
+    // STEP 2:
+    // Find the <div> with the id "output".
+    // The property 'innerHTML' tells the browser:
+    // "Treat this string as REAL HTML".
+    //
+    // This is dangerous when the text comes from a user,
+    // because HTML can contain JavaScript.
+    //
+    // TRY THIS INPUT:
+    // <img src=x onerror="alert('XSS')">
+    //
+    // QUESTION:
+    // Why does the alert run?
+    document.getElementById("output").textContent =
+        "Welcome, " + name;
+
+    // STEP 3 (YOUR TASK):
+    // Change innerHTML to textContent.
+    //
+    // textContent tells the browser:
+    // "Treat this ONLY as text, not HTML".
+    //
+    // This stops the browser from running scripts.
+}
+</script>
