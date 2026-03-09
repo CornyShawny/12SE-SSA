@@ -23,5 +23,5 @@ def decrypt_file(encrypted_file_path):
     print(f"File {original_file_path} decrypted successfully.")
 
 # Example usage
-encrypt_file('sensitive_data.txt')
-decrypt_file('sensitive_data.txt.enc')
+encrypt_file('C:\Users\Shawn\Documents\GitHub\12SE-SSA\protect-against-attacks\activity-1\sensitive_data.txt')
+decrypt_file('C:\Users\Shawn\Documents\GitHub\12SE-SSA\protect-against-attacks\activity-1\sensitive_data.txt.enc')
