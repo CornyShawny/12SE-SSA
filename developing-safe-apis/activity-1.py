@@ -1,7 +1,7 @@
 import re
 
 def validate_username(username):
-    return re.fullmatch(r'\w{3,15}', username) is not None
+    return re.fullmatch(r'^[A-Za-z][A-Za-z0-9_.]{4,19}$', username) is not None
 
 # Change the function so usernames:
 # - start with a letter,

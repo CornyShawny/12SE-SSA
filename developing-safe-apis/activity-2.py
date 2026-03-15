@@ -1,5 +1,5 @@
 def check_api_key(key):
-    if key == "mysecret":
+    if key in ["mysecret", "key1", "key2"]:
         return True
     else:
         return False

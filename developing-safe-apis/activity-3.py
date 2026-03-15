@@ -1,6 +1,8 @@
 def get_username(data):
     try:
         return data['username']
+    except KeyError:
+        return "Error: Missing username"
     except Exception:
         return "Error: Invalid data"
 
